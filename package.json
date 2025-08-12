@@ -1,0 +1,26 @@
+{
+  "name": "autobiography-story-generator",
+  "version": "1.0.0",
+  "description": "Generate autobiography stories from user responses using Claude AI",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/datastore": "^7.5.1",
+    "@google-cloud/functions-framework": "^3.3.0",
+    "@google-cloud/logging": "^10.4.0",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "functions-framework --target=generateStories --port=8080",
+    "health": "functions-framework --target=healthCheck --port=8081",
+    "dev": "cross-env NODE_ENV=development functions-framework --target=generateStories",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
